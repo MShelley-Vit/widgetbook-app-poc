@@ -34,12 +34,18 @@ final directories = <_i1.WidgetbookNode>[
           ),
         ],
       ),
-      _i1.WidgetbookLeafComponent(
+      _i1.WidgetbookComponent(
         name: 'VGList',
-        useCase: _i1.WidgetbookUseCase(
-          name: 'Primary',
-          builder: _i3.buildDefaultListUseCase,
-        ),
+        useCases: [
+          _i1.WidgetbookUseCase(
+            name: 'Default List',
+            builder: _i3.buildDefaultListUseCase,
+          ),
+          _i1.WidgetbookUseCase(
+            name: 'Text List',
+            builder: _i3.buildTextListUseCase,
+          ),
+        ],
       ),
     ],
   )

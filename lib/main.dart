@@ -21,7 +21,13 @@ class WidgetbookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(
-      lightTheme: ThemeData.light(),
+      appBuilder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: VGAppTheme.create(),
+          home: child,
+        );
+      },
       directories: directories,
       // addons: [],
     );
