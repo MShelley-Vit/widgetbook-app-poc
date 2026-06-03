@@ -1,0 +1,28 @@
+name: widgetbook_test
+description: "A test project for widgetbook using the Discover Flutter UI library"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  accessibility_tools: ^2.8.0
+  flutter:
+    sdk: flutter
+  widgetbook: ^3.23.0
+  widgetbook_annotation: ^3.11.0
+  ui_lib:
+    git:
+      url: git@github.com:discovery-ltd/design-system-ui-library.git
+      path: ui_lib
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  widgetbook_generator: ^3.8.0
+  build_runner: ^2.4.13
+
+flutter:
+  uses-material-design: true
