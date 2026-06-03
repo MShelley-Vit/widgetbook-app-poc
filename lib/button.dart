@@ -15,7 +15,6 @@ Widget buildDefaultButtonUseCase(BuildContext context) {
     initialOption: 'Small'
   );
   final showDisabledState = context.knobs.boolean(label: 'Show Disabled State', initialValue: false);
-  // final additionalHorizontalPadding = context.knobs.double.input(label: 'Add additional horizontal padding', initialValue: 16);
 
   return Scaffold(
     backgroundColor: Colors.white,
@@ -27,7 +26,6 @@ Widget buildDefaultButtonUseCase(BuildContext context) {
         onTap: showDisabledState ? null : () {},
         buttonSize: buttonSize == 'Small' ? VGButtonSize.small : buttonSize == 'Large' ? VGButtonSize.large : null,
         fullWidth: buttonSize == 'Full Width' ? true : false,
-        // paddingHorizontal: additionalHorizontalPadding,
       )
     )
   );
@@ -44,7 +42,6 @@ Widget buildSecondaryButtonUseCase(BuildContext context) {
     initialOption: 'Small'
   );
   final showDisabledState = context.knobs.boolean(label: 'Show Disabled State', initialValue: false);
-  // final additionalHorizontalPadding = context.knobs.double.input(label: 'Add additional horizontal padding', initialValue: 16);
 
   return Scaffold(
     backgroundColor: Colors.grey,
@@ -56,7 +53,6 @@ Widget buildSecondaryButtonUseCase(BuildContext context) {
         onTap: showDisabledState ? null : () {},
         buttonSize: buttonSize == 'Small' ? VGButtonSize.small : buttonSize == 'Large' ? VGButtonSize.large : null,
         fullWidth: buttonSize == 'Full Width' ? true : false,
-        // paddingHorizontal: additionalHorizontalPadding,
       )
     )
   );
@@ -73,7 +69,6 @@ Widget buildOutlinedButtonUseCase(BuildContext context) {
     initialOption: 'Small'
   );
   final showDisabledState = context.knobs.boolean(label: 'Show Disabled State', initialValue: false);
-  // final additionalHorizontalPadding = context.knobs.double.input(label: 'Add additional horizontal padding', initialValue: 16);
 
   return Scaffold(
     backgroundColor: Colors.white,
@@ -85,7 +80,6 @@ Widget buildOutlinedButtonUseCase(BuildContext context) {
         onTap: showDisabledState ? null : () {},
         buttonSize: buttonSize == 'Small' ? VGButtonSize.small : buttonSize == 'Large' ? VGButtonSize.large : null,
         fullWidth: buttonSize == 'Full Width' ? true : false,
-        // paddingHorizontal: additionalHorizontalPadding,
       )
     )
   );
