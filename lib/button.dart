@@ -48,6 +48,7 @@ Widget buildSecondaryButtonUseCase(BuildContext context) {
     body: Center(
       child: VGButton.secondary(
         buttonText,
+        titleIdentifier: 'buttonText',
         leadingIcon: showLeadingIcon ? Icons.chevron_left_sharp : null,
         trailingIcon: showTrailingIcon ? Icons.add : null,
         onTap: showDisabledState ? null : () {},
@@ -75,6 +76,7 @@ Widget buildOutlinedButtonUseCase(BuildContext context) {
     body: Center(
       child: VGButton.outlined(
         buttonText,
+        titleIdentifier: 'buttonText',
         leadingIcon: showLeadingIcon ? Icons.chevron_left_sharp : null,
         trailingIcon: showTrailingIcon ? Icons.add : null,
         onTap: showDisabledState ? null : () {},
