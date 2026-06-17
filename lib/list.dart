@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_lib/ui_components_manager.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -21,17 +22,20 @@ Widget buildDefaultListUseCase(BuildContext context) {
       body: Center(
         child: Column(
           children: [
-            VGList(title: itemOneText),
+            VGList(title: itemOneText, semanticsProperties: SemanticsProperties(label: itemOneText)),
             VGList(
               title: itemTwoText,
               onTap: () {},
+              semanticsProperties: SemanticsProperties(label: itemTwoText)
             ),
             VGList(
-              title: itemThreeText
+              title: itemThreeText,
+              semanticsProperties: SemanticsProperties(label: itemThreeText)
             ),
             VGList(
               title: itemFourText,
-              leading: showLeadingIcons ? SvgPicture.string(
+              semanticsProperties: SemanticsProperties(label: itemFourText),
+              leading: showLeadingIcons ? SvgPicture.string(semanticsLabel: itemFourText,
                 SVGRaw.google,
               ) : null,
             ),
@@ -67,6 +71,7 @@ Widget buildTextListUseCase(BuildContext context) {
                 height: 24,
               ) : null,
               subTitle: showSubtitles ? VGText(itemOneSubtitle) : null,
+              semanticsProperties: SemanticsProperties(label: itemOneTitle),
               onTap: () {},
             ),
             VGList.textList(
@@ -77,6 +82,7 @@ Widget buildTextListUseCase(BuildContext context) {
               ) : null,
               title: itemTwoTitle,
               subTitle: showSubtitles ? VGText(itemTwoSubtitle) : null,
+              semanticsProperties: SemanticsProperties(label: itemTwoTitle),
               onTap: () {},
             ),
             VGList.textList(
@@ -87,6 +93,7 @@ Widget buildTextListUseCase(BuildContext context) {
               ) : null,
               title: itemThreeTitle,
               subTitle: showSubtitles ? VGText(itemThreeSubtitle) : null,
+              semanticsProperties: SemanticsProperties(label: itemThreeTitle),
               onTap: () {},
             ),
           ],

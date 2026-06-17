@@ -25,11 +25,35 @@ class WidgetbookApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: VGAppTheme.create(),
+          builder: (context, child) => AccessibilityTools(child: child),
           home: child,
         );
       },
       directories: directories,
       addons: [
+        // BuilderAddon(
+        //   name: 'Accessibility',
+        //   builder: (context, child) => AccessibilityTools(
+        //     // Set to null to disable tap area checking
+        //     minimumTapAreas: MinimumTapAreas.material,
+        //     checkMissingInputLabels: true,
+        //     // Check for semantic labels
+        //     checkSemanticLabels: true,
+        //     // Check for flex overflows
+        //     checkFontOverflows: true,
+        //     // Check for image labels
+        //     checkImageLabels: true,
+        //     // Set how much info about issues is printed
+        //     logLevel: LogLevel.warning,
+        //     // Customize testing tools configuration
+        //     testingToolsConfiguration: TestingToolsConfiguration(
+        //       enabled: true,
+        //       minTextScale: 0.5,
+        //       maxTextScale: 5,
+        //     ),
+        //     child: child
+        //   )
+        // ),
         ViewportAddon([
           ViewportData(name: 'iPhone 17', width: 402, height: 874, pixelRatio: 3, platform: TargetPlatform.iOS),
           ViewportData(name: 'iPhone 16', width: 393, height: 852, pixelRatio: 3, platform: TargetPlatform.iOS),
@@ -38,13 +62,10 @@ class WidgetbookApp extends StatelessWidget {
           ViewportData(name: 'iPad Pro', width: 834, height: 1210, pixelRatio: 2, platform: TargetPlatform.iOS),
           ViewportData(name: 'iPad Mini', width: 744, height: 1133, pixelRatio: 2, platform: TargetPlatform.iOS),
           ViewportData(name: 'Galaxy Tab S9', width: 712, height: 1138, pixelRatio: 2.5, platform: TargetPlatform.android),
+          Viewports.none
         ]),
         InspectorAddon(),
         TextScaleAddon(),
-        BuilderAddon(
-          name: 'Accessibility',
-          builder: (context, child) => AccessibilityTools(child: child)
-        ),
       ],
     );
   }
